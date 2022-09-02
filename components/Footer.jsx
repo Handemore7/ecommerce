@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { urlFor } from '../lib/client';
+import Link from 'next/link';
 
-const Footer = () => {
+const Footer = ( {footer}) => {
   return (
-    <div>Footer</div>
+    <div>a</div>
   )
 }
 
