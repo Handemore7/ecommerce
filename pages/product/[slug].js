@@ -65,18 +65,17 @@ const ProductDetails = ({productsData, specProduct }) => {
                     <button type='button' className='buy-now' onClick=''>Comprar ahora</button>
                 </div>
             </div>
+        </div>
             <div className='maylike-products-wrapper'>
                 <h2>Tambien podría interesarte:</h2>
                 <div className='marquee'>
                     <div className='maylike-products-container track'>
-                        {console.log(productsData)}
                         {productsData.map((item) => (
                             <Product key={item._id} product={item}/>
                         ))}
                     </div>
                 </div>
             </div>
-        </div>
     </div>
   )
 }
