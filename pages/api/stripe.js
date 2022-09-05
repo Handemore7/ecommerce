@@ -1,11 +1,9 @@
 import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.NEXT_STRIPE_SECRET_KEY);
+const stripe = new Stripe(`${process.env.NEXT_STRIPE_SECRET_KEY}`);
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-console.log(rqe.body.cartItems);
-
     try {
       const params = {
         submit_type: 'pay',
@@ -13,8 +11,7 @@ console.log(rqe.body.cartItems);
         payment_method_types: ['card'],
         billing_address_collection: 'auto',
         shipping_options: [
-          { shipping_rate: 'shr_1Le21yCUdwWsZQlq7cpDz8jH' },
-          { shipping_rate: 'shr_1Le24RCUdwWsZQlqC5aPnrGj' }
+          { shipping_rate: 'shr_1Le24RCUdwWsZQlqC5aPnrGj' },
         ],
         line_items: req.body.map((item) => {
           const img = item.image[0].asset._ref;
@@ -22,7 +19,7 @@ console.log(rqe.body.cartItems);
 
           return {
             price_data: { 
-              currency: 'usd',
+              currency: 'cop',
               product_data: { 
                 name: item.name,
                 images: [newImage],

@@ -13,9 +13,9 @@ const Navbar = () => {
         <Link href='/'>Tienda de tecnologia</Link>
       </p>
 
-      <button type='button' className='card-icon' onClick={() => setShowCart(true)}>
+      <button type='button' className='cart-icon' onClick={() => setShowCart(true)}>
         <AiOutlineShopping />
-        <span className='card-item-qty'>{totalQuantities}</span>
+        <span className='cart-item-qty'>{totalQuantities}</span>
       </button>
 
       {showCart && <Cart />}
